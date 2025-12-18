@@ -1,0 +1,40 @@
+
+<div class="portfolio py-5">
+    <div class="container">
+
+        <div class="text-center py-5">
+            <h2 class="text-uppercase fw-bold display-5 mb-3">portfolio component</h2>
+            
+            <div class="d-flex justify-content-center align-items-center mb-5">
+                <div class="line me-3" style="width: 100px; height: 4px; background-color: #2C3E50;"></div>
+                <i class="fa-solid fa-star fs-4" style="color: #2C3E50;"></i>
+                <div class="line ms-3" style="width: 100px; height: 4px; background-color: #2C3E50;"></div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            @for (item of portfolioItems; track item.id) {
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item position-relative overflow-hidden rounded" 
+                         (click)="openModal(item)">
+                        <img [src]="item.image" [alt]="item.title" class="img-fluid w-100 rounded">
+                        <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center opacity-0 transition-all">
+                            <i class="fa-solid fa-plus text-white display-1"></i>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    @if (selectedItem) {
+        <div class="modal-overlay" (click)="closeModal()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <button class="modal-close-btn" (click)="closeModal()">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+                <img [src]="selectedItem.image" [alt]="selectedItem.title" class="img-fluid rounded">
+            </div>
+        </div>
+    }
+</div>
