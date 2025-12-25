@@ -168,6 +168,12 @@
     transition: all 1s;
 }
 
+.footer{
+    transition: all 1s;
+}
+
+
+
 /* للموبايل (شاشات أصغر من 768px) */
 @media (max-width: 767.98px) {
     .custom-line, .line {
