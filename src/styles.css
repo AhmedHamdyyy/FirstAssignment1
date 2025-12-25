@@ -93,7 +93,7 @@
     max-height: 90vh;
 }
 
-.modal-close-btn {
+/* .modal-close-btn {
     position: absolute;
     top: -40px;
     right: 0;
@@ -104,6 +104,13 @@
     color: white;
     transition: color 0.3s;
     z-index: 10;
+} */
+ @media (max-width: 576px) {
+    .modal-close-btn {
+        top: 10px;
+        right: 15px;
+        color: #333; /* خليه غامق لو الخلفية فاتحة */
+    }
 }
 
 .modal-close-btn:hover {
@@ -155,4 +162,36 @@
     --bs-btn-disabled-bg: transparent;
     /* --bs-btn-disabled-border-color: #f8f9fa; */
     --bs-gradient: none;
+}
+
+.navbar{
+    transition: all 1s;
+}
+
+/* للموبايل (شاشات أصغر من 768px) */
+@media (max-width: 767.98px) {
+    .custom-line, .line {
+        width: 60px; /* تصغير الخط الفاصل في الموبايل */
+    }
+
+    .custom-text {
+        font-size: 1rem; /* تصغير حجم الخط */
+        line-height: 1.6;
+    }
+
+    .modal-content {
+        max-width: 95%; /* استغلال مساحة أكبر في الموبايل */
+    }
+
+    .btn-social {
+        width: 2.8rem; /* تصغير حجم أزرار السوشيال ميديا */
+        height: 2.8rem;
+    }
+}
+
+/* للتابلت (شاشات بين 768px و 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .custom-text {
+        font-size: 1.05rem;
+    }
 }
