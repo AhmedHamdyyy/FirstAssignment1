@@ -12,9 +12,9 @@ export class Footer {
   @HostListener('window:scroll',['$event']) onScrolling(event:any){
   if(window.scrollY > 0){
         this.footer.nativeElement.classList.add('py-0');
-        this.footer.nativeElement.classList.remove('pt-2');
+        this.footer.nativeElement.classList.remove('pt-3');
   }else{
-        this.footer.nativeElement.classList.add('pt-2');
+        this.footer.nativeElement.classList.add('pt-3');
         this.footer.nativeElement.classList.remove('py-0');
   }
 }
